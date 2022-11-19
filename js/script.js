@@ -1,5 +1,4 @@
-const apiKey = "ea62a22ed816148b06ec1d1cd9ba33c4";
-const apiCountryURL = "https://countryflagsapi.com/png/"
+const apiKey = "SUA API KEY";
 
 const cityInput = document.querySelector("#city-input");
 const searchBtn = document.querySelector("#search");
@@ -12,7 +11,6 @@ const descElement = document.querySelector(".description");
 const weatherIcon = document.querySelector("#weather-icon");
 const umidityElement = document.querySelector("#umidity span");
 const windElement = document.querySelector("#wind span");
-// const countryElement = document.querySelector("#country");
 
 const weatherContainer = document.querySelector("#weather-data");
 const othersContainer = document.querySelector("#others");
@@ -39,7 +37,6 @@ const showWeatherData = async (city) => {
     weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
     umidityElement.innerHTML = `${data.main.humidity}%`;
     windElement.innerHTML = `${parseInt(data.wind.speed)}km/h`;
-    //countryElement.setAttribute("src", apiCountryURL + data.sys.country);
     weatherContainer.classList.remove("hide");
 
     othersContainer.classList.add("hide");
@@ -75,7 +72,6 @@ const showData = async (city) => {
     weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${city.weather[0].icon}.png`);
     umidityElement.innerHTML = `${city.main.humidity}%`;
     windElement.innerHTML = `${parseInt(city.wind.speed)}km/h`;
-    //countryElement.setAttribute("src", apiCountryURL + city.sys.country);
     weatherContainer.classList.remove("hide");
 
     othersContainer.classList.add("hide");
@@ -101,7 +97,7 @@ cityInput.addEventListener("keypress", (e) => {
 
 
 outherBtn.addEventListener('click', () => {
-    //if ("geolocation" in navigator)
+    
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setPosition, showError);
     }
